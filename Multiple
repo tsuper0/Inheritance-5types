@@ -1,0 +1,16 @@
+class GraphicDesigner:
+    def designLogo(self):
+        print("Designing a logo for the nike.")
+
+class WebDeveloper:
+    def buildWebsite(self):
+        print("Building a website for the brand.")
+
+class DigitalSolutionsProvider(GraphicDesigner, WebDeveloper):
+    def deliverProject(self):
+        print("Delivering the complete project:")
+        self.designLogo()
+        self.buildWebsite()
+
+provider = DigitalSolutionsProvider()
+provider.deliverProject()
