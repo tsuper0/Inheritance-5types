@@ -1,0 +1,38 @@
+class CreativeEntrepreneur:
+    def __init__(self, name):
+        self.name = name
+
+    def CollectingIdeas(self):
+        print(f"{self.name} is collecting some creative ideas.")
+
+class RawDesigner(CreativeEntrepreneur):
+    def createDesign(self):
+        print(f"{self.name} is creating a raw design.")
+
+class ContentStrategist(CreativeEntrepreneur):
+    def planContent(self):
+        print(f"{self.name} is planning content strategy.")
+
+class TalesFromTheIslandsCreator(RawDesigner, ContentStrategist):
+    def __init__(self, name, trending_topic):
+        RawDesigner.__init__(self, name)
+        ContentStrategist.__init__(self, name)
+        self.trending_topic = trending_topic
+
+    def produceReel(self):
+        if self.trending_topic == "comedy lines":
+            print(f"{self.name} is producing a comedy lines.")
+        elif self.trending_topic == "motivational stories":
+            print(f"{self.name} is producing a reel about motivational stories.")
+        else:
+            print(f"{self.name} is producing a reel on a different topic.")
+
+
+creator1 = TalesFromTheIslandsCreator("Gorge", "motivational stories")
+creator1.CollectingIdeas()
+creator1.createDesign()
+creator1.planContent()
+creator1.produceReel()
+
+creator2 = TalesFromTheIslandsCreator("Jordan", "comedy lines")
+creator2.produceReel()
